@@ -1,4 +1,5 @@
 const grid = document.querySelector('.grid');
+let gridSize = '16';
 
 function getRandomHexColor() {
     let randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -34,6 +35,7 @@ function addGrid16 () {
             }
         });
     }
+    gridSize = '16';
 }
 window.addEventListener('DOMContentLoaded', addGrid16);
 
@@ -76,6 +78,7 @@ function addGrid32 () {
             }
         });
     }
+    gridSize = '32';
 }
 
 const button32 = document.querySelector('#b32');
@@ -111,6 +114,7 @@ function addGrid64 () {
             }
         });
     }
+    gridSize = '64';
 }
 
 const button64 = document.querySelector('#b64');
@@ -146,6 +150,7 @@ function addGrid128 () {
             }
         });
     }
+    gridSize = '128';
 }
 
 const button128 = document.querySelector('#b128');
@@ -156,6 +161,13 @@ button128.addEventListener('click', () => {
 
 let rainbowEffect = false;
 let shadowEffect = false;
+
+// black button
+const buttonReset = document.querySelector('#black');
+buttonReset.addEventListener('click', () => {
+    rainbowEffect = false;
+    shadowEffect = false;
+});
 
 // rainbow effect button
 
@@ -172,9 +184,19 @@ buttonShadow.addEventListener('click', () => {
     shadowEffect = true;
 });
 
-//reset black button (default?)
-const buttonReset = document.querySelector('#black');
-buttonReset.addEventListener('click', () => {
-    rainbowEffect = false;
-    shadowEffect = false;
+const buttonClear = document.querySelector('#clear');
+buttonClear.addEventListener('click', () => {
+    if (gridSize === '16') {
+        resetGrid();
+        addGrid16();
+    } else if (gridSize === '32') {
+        resetGrid();
+        addGrid32();
+    } else if (gridSize === '64') {
+        resetGrid();
+        addGrid64();
+    } else if (gridSize === '128') {
+        resetGrid();
+        addGrid128();
+    }
 });

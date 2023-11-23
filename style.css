@@ -1,42 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Gochi+Hand&family=Prompt:wght@100;200;400;500;700&display=swap');
+
 body {
-    background-color: #FFDDCC;
-    height: 100%;
+    background-color: #e3e3e3;
+    height: 100vh;
     margin: 0;
+    font-family: 'Gochi Hand', sans-serif;
+    flex-direction: column;
+    color: #FFFFFF;
+}
+
+.title {
+    font-size: 2.6em;
+}
+
+h2 {
+    font-size: 1.6em;
+    margin-bottom: 0px;
 }
 
 .main {
     display: flex;
-    height: calc( 100vh - 8vh);
+    flex: 1;
+    height: 92%
+}
+
+.buttons {
+    font-family: 'Gochi Hand', sans-serif;
+    border-radius: 20px;
+    font-size: 1em;
+    background-color: #41506b;
+    color: #FFFFFF;
+}
+
+.buttons:hover {
+    background-color: #FFDDCC;
 }
 
 .grid-container {
     background-color: #FFDDCC;
     display: flex;
     margin: auto;
-    justify-content: center;
-    border: 20px solid #265073;
+    border: 20px solid #41506b;
     border-radius: 12px;
 }
 
 .sidebar {
     width: 22%;
-    background-color: #FFCCCC;
+    background-color: #ff7e67;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
 }
 
 .settings-list {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+    align-items: center;
 }
 
 .grid-settings {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
 }
 
 .color-settings {
@@ -45,13 +72,17 @@ body {
     gap: 10px;
 }
 
+.clear-setting {
+    margin-top: 10px;
+}
+
 .footer {
     height: 8vh;
-    background-color: #FFEECC;
+    background-color: #41506b;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #44444;
+    color: #e3e3e3;
     font-size: 1em;
     letter-spacing: 0.1ch;
     gap: 0.5%;
@@ -60,7 +91,7 @@ body {
 /* Add [x]px border for border depending if 16-32-64-128  */
 .grid {
     justify-content: center;
-    justify-content: center;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     width: 512px;
@@ -115,3 +146,4 @@ body {
     height: auto;
     margin-top: 30%;
 }
+
