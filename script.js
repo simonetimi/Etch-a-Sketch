@@ -1,5 +1,13 @@
 const grid = document.querySelector('.grid');
 
+function getRandomHexColor() {
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    while (randomColor.length < 6) {
+      randomColor = '0' + randomColor;
+    }
+    return '#' + randomColor;
+  }
+
 // 16x16 grid
 function addGrid16 () {   
     for (let i = 0; i < 256; i++) {
@@ -8,8 +16,22 @@ function addGrid16 () {
         gridBlock.classList.add('grid-block-16');
         gridBlock.classList.add('white-block');
         gridBlock.addEventListener('mouseover', function () {
-        gridBlock.classList.add('black-block');
-        gridBlock.classList.remove('white-block');
+            if (rainbowEffect === false && shadowEffect === false) {
+                gridBlock.classList.add('black-block');
+                gridBlock.classList.remove('white-block');
+            } else if (rainbowEffect === true) {
+                gridBlock.classList.remove('white-block');
+                gridBlock.style.backgroundColor = getRandomHexColor();
+            } else if (shadowEffect === true) {
+                gridBlock.classList.remove('white-block');
+                gridBlock.classList.add('black-block');
+                let opacity = parseFloat(gridBlock.style.opacity) || 0.0;
+                opacity += 0.1;
+                if (opacity > 1) {
+                    opacity = 1;
+                }           
+                gridBlock.style.opacity = opacity.toString();
+            }
         });
     }
 }
@@ -36,8 +58,22 @@ function addGrid32 () {
         gridBlock.classList.add('grid-block-32');
         gridBlock.classList.add('white-block');
         gridBlock.addEventListener('mouseover', function () {
-        gridBlock.classList.add('black-block');
-        gridBlock.classList.remove('white-block');
+            if (rainbowEffect === false && shadowEffect === false) {
+                gridBlock.classList.add('black-block');
+                gridBlock.classList.remove('white-block');
+            } else if (rainbowEffect === true) {
+                gridBlock.classList.remove('white-block');
+                gridBlock.style.backgroundColor = getRandomHexColor();
+            } else if (shadowEffect === true) {
+                gridBlock.classList.remove('white-block');
+                gridBlock.classList.add('black-block');
+                let opacity = parseFloat(gridBlock.style.opacity) || 0.0;
+                opacity += 0.1;
+                if (opacity > 1) {
+                    opacity = 1;
+                }           
+                gridBlock.style.opacity = opacity.toString();
+            }
         });
     }
 }
@@ -57,8 +93,22 @@ function addGrid64 () {
         gridBlock.classList.add('grid-block-64');
         gridBlock.classList.add('white-block');
         gridBlock.addEventListener('mouseover', function () {
-        gridBlock.classList.add('black-block');
-        gridBlock.classList.remove('white-block');
+            if (rainbowEffect === false && shadowEffect === false) {
+                gridBlock.classList.add('black-block');
+                gridBlock.classList.remove('white-block');
+            } else if (rainbowEffect === true) {
+                gridBlock.classList.remove('white-block');
+                gridBlock.style.backgroundColor = getRandomHexColor();
+            } else if (shadowEffect === true) {
+                gridBlock.classList.remove('white-block');
+                gridBlock.classList.add('black-block');
+                let opacity = parseFloat(gridBlock.style.opacity) || 0.0;
+                opacity += 0.1;
+                if (opacity > 1) {
+                    opacity = 1;
+                }           
+                gridBlock.style.opacity = opacity.toString();
+            }
         });
     }
 }
@@ -78,8 +128,22 @@ function addGrid128 () {
         gridBlock.classList.add('grid-block-128');
         gridBlock.classList.add('white-block');
         gridBlock.addEventListener('mouseover', function () {
-        gridBlock.classList.add('black-block');
-        gridBlock.classList.remove('white-block');
+            if (rainbowEffect === false && shadowEffect === false) {
+                gridBlock.classList.add('black-block');
+                gridBlock.classList.remove('white-block');
+            } else if (rainbowEffect === true) {
+                gridBlock.classList.remove('white-block');
+                gridBlock.style.backgroundColor = getRandomHexColor();
+            } else if (shadowEffect === true) {
+                gridBlock.classList.remove('white-block');
+                gridBlock.classList.add('black-block');
+                let opacity = parseFloat(gridBlock.style.opacity) || 0.0;
+                opacity += 0.1;
+                if (opacity > 1) {
+                    opacity = 1;
+                }           
+                gridBlock.style.opacity = opacity.toString();
+            }
         });
     }
 }
@@ -88,4 +152,29 @@ const button128 = document.querySelector('#b128');
 button128.addEventListener('click', () => {
     resetGrid();
     addGrid128();
+});
+
+let rainbowEffect = false;
+let shadowEffect = false;
+
+// rainbow effect button
+
+const buttonRainbow = document.querySelector('#rainbow');
+buttonRainbow.addEventListener('click', () => {
+    rainbowEffect = true;
+    shadowEffect = false;
+});
+
+//shadow effect button
+const buttonShadow = document.querySelector('#shadow');
+buttonShadow.addEventListener('click', () => {
+    rainbowEffect = false;
+    shadowEffect = true;
+});
+
+//reset black button (default?)
+const buttonReset = document.querySelector('#black');
+buttonReset.addEventListener('click', () => {
+    rainbowEffect = false;
+    shadowEffect = false;
 });
