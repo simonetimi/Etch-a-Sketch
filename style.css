@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Gochi+Hand&family=Prompt:wght@100;200;400;500;700&display=swap');
 
 body {
-    background-color: #e3e3e3;
+    background-color: #86BBD8;
     height: 100vh;
     margin: 0;
     font-family: 'Gochi Hand', sans-serif;
@@ -28,28 +28,32 @@ h2 {
     font-family: 'Gochi Hand', sans-serif;
     border-radius: 20px;
     font-size: 1em;
-    background-color: #41506b;
+    background-color: #DD9296;
     color: #FFFFFF;
+    width: 150px;
+    height: 30px;
 }
 
 .buttons:hover {
-    background-color: #FFDDCC;
+    background-color: #EF767A;
 }
 
 .grid-container {
     background-color: #FFDDCC;
     display: flex;
     margin: auto;
-    border: 20px solid #41506b;
+    border: 20px solid #33658A;
     border-radius: 12px;
 }
 
 .sidebar {
     width: 22%;
-    background-color: #ff7e67;
+    background-color: #2F4858;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 8px solid white;
+    border-radius: 0px 40px 40px 0px;
 }
 
 .settings-list {
@@ -70,15 +74,24 @@ h2 {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    align-items: center;
 }
 
 .clear-setting {
-    margin-top: 10px;
+    margin-top: 40px;
+}
+
+#clear {
+    background-color: #DD9296;
+}
+
+#clear:hover {
+    background-color: #EF767A;
 }
 
 .footer {
     height: 8vh;
-    background-color: #41506b;
+    background-color: #33658A;
     display: flex;
     align-items: center;
     justify-content: center;
