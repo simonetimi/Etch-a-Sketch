@@ -41,6 +41,12 @@ h2 {
     background-color: #EF767A;
 }
 
+.buttons:active {
+    transform: scale(0.99); 
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24); 
+    box-shadow: 0;
+}
+
 .grid-container {
     background-color: #FFDDCC;
     display: flex;
@@ -86,11 +92,11 @@ h2 {
 }
 
 #clear {
-    background-color: #DD9296;
+    background-color: #fa444d;
 }
 
 #clear:hover {
-    background-color: #EF767A;
+    background-color: #da141b;
 }
 
 .footer {
