@@ -10,11 +10,11 @@ body {
 }
 
 .title {
-    font-size: 2.6em;
+    font-size: calc(16px + 2vw);
 }
 
 h2 {
-    font-size: 1.6em;
+    font-size: calc(14px + 0.9vw);
     margin-bottom: 0px;
 }
 
@@ -28,11 +28,11 @@ h2 {
     font-family: 'Gochi Hand', sans-serif;
     border-radius: 10px;
     border: 0px;
-    font-size: 1em;
+    font-size: 1rem;
     background-color: #DD9296;
     color: #FFFFFF;
-    width: 140px;
-    height: 30px;
+    width: calc(16px + 9vw);
+    height: calc(10px + 1vw);
     -webkit-box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.58); 
     box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.58);
 }
@@ -56,7 +56,7 @@ h2 {
 }
 
 .sidebar {
-    width: 22%;
+    width: clamp(20ch, 22%, 50ch);
     background-color: #2F4858;
     display: flex;
     flex-direction: column;
@@ -70,6 +70,7 @@ h2 {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    margin-top: -28px;
 }
 
 .grid-settings {
@@ -77,7 +78,6 @@ h2 {
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    margin-top: -10px;
 }
 
 .color-settings {
